@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Nav/>
       <Routes>
-        <Route path='/starwars' element={<LandingPage/>} />
+        <Route path='/' element={<LandingPage/>} />
         <Route path='/detail/:_id' element={<DetailFilm/>} />
         <Route path='/detailc/:_id' element={<DetailCharacter/>} />
       </Routes>

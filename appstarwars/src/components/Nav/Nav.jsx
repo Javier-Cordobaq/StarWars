@@ -13,7 +13,7 @@ const Nav = () => {
 
   return (
     <div className={style.container}>
-        <Link to='/starwars'>
+        <Link to='/'>
             <img src={logo} alt=''/>
         </Link>
        {/*  {
