@@ -5,6 +5,8 @@ export const GET_FILMS = 'GET_FILMS'
 export const FILMS_BY_ID = 'FILMS_BY_ID'
 export const RESET = 'RESET'
 export const GET_CHARACTERS= 'GET_CHARACTERS'
+export const CHARACTERS_BY_ID = 'CHARACTERS_BY_ID'
+export const GET_NAVES = 'GET_NAVES'
 
 export const getInfo = () => async dispatch => {
     try{
@@ -64,6 +66,25 @@ export const getFilmsById = (_id) => async dispatch => {
     }
 }
 
+export const getCharactersById = (_id) => async dispatch => {
+    try{
+        console.log('Llamados Detail')
+        const json = await axios.get(`https://swapi.dev/api/people/${_id}`)
+        if (json.status === 200) 
+            return dispatch({
+                type: CHARACTERS_BY_ID,
+                payload: json.data
+            })
+    }
+    catch (error) {
+        console.log(error, 'Errores')
+        return dispatch({
+            type: CHARACTERS_BY_ID,
+            payload: error.response.data.errors
+        })
+    }
+}
+
 export const getCharacters = (url) => async dispatch => {
     try{
         console.log('Llamados getPersonajes')
@@ -80,6 +101,28 @@ export const getCharacters = (url) => async dispatch => {
         return dispatch({
             type: GET_CHARACTERS,
             payload: error.response.data.errors
+        })
+    }
+}
+
+/* Para llamar a las naves */
+
+export const getNaves = (url) => async dispatch => {
+    try{
+        console.log('Llamados getPersonajes')
+        const json = await axios.get(`${url}`)
+        if (json.status === 200){
+            return dispatch ({
+                type: GET_NAVES,
+                payload: json.data
+            })
+        }
+    }
+    catch (error) {
+        console.log(error, 'Errores')
+        return dispatch({
+            type: GET_NAVES,
+            payload: error.message
         })
     }
 }

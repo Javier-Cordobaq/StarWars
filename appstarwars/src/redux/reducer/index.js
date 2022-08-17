@@ -3,7 +3,9 @@ import {
   GET_FILMS,
   FILMS_BY_ID,
   RESET,
-  GET_CHARACTERS
+  GET_CHARACTERS,
+  CHARACTERS_BY_ID,
+  GET_NAVES
 } from "../actions/index";
 
 const inicialState = {
@@ -11,6 +13,8 @@ const inicialState = {
   films: [],
   filmsById: [],
   characters: [],
+  charactersId: [],
+  naves: []
 };
 
 const rootReducer = (state = inicialState, action) => {
@@ -35,11 +39,22 @@ const rootReducer = (state = inicialState, action) => {
               ...state,
               characters: state.characters.findIndex(object => {   return object.name === action.payload.name; }) === -1 ? [...state.characters, action.payload] : state.characters 
             }
+      case GET_NAVES:
+            return {
+              ...state,
+              naves: state.naves.findIndex(object => {   return object.name === action.payload.name; }) === -1 ? [...state.naves, action.payload] : state.naves
+            }
+      case  CHARACTERS_BY_ID:
+        return {
+          ...state,
+          charactersId: action.payload
+        }
       case RESET:
         return {
           ...state,
           filmsById: [],
-          characters: []
+          characters: [],
+          naves: []
         }
 
     default:

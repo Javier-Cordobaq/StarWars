@@ -4,14 +4,20 @@ import { Link } from 'react-router-dom'
 
 const Card = ({info}) => {
 
+  const _id = Number(info.url.split('/').slice(-2)[0])
+
   return (
     <div className={style.container}>
-        <Link to={`/detail/${info.episode_id}`}>
+        <Link to={`/detail/${_id}`}>
         <div>
-            <h1 className={style.title}>- {info.title}</h1>
-            <p>Fecha lanzamiento: {info.release_date}</p>
-            <p>Director: {info.director}</p>
-            <p>Productor: {info.producer}</p>
+            <div className={style.containerTitle}>
+                <h1 className={style.title}>{info.title}</h1>
+            </div>
+            <div>
+                <p>Fecha lanzamiento: {info.release_date}</p>
+                <p>Director: {info.director}</p>
+                <p>Productor: {info.producer}</p>
+            </div>
         </div>
         </Link>
     </div>

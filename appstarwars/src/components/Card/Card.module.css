@@ -1,19 +1,38 @@
 .container {
     width: 25rem;
     height: 15rem;
-    border: 5px solid white;
-    border-radius: 15px;
+    border: 3px solid white;
     margin: 0.5rem;
     box-shadow: 0 10px 10px rgb(0 0 0 / 4%);
     padding: 1rem;
     box-sizing: border-box;
     overflow: hidden;
     transition: 0.3s all;
+    background-color: #e6e6e6;
+    border-radius: 30px;
+    background: #d1d1d1;
+    box-shadow:  20px 20px 60px #b2b2b2,
+                -20px -20px 60px #f0f0f0;
+}
+/* Estios contenedor titulo */
+.containerTitle {
+    transition: 0.3s all;
+    height: auto;
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: 0 1rem;
+    display: flex;
+}
+.container:hover .containerTitle {
+    background-color: #456696;
+    display: grid;
+    place-items: center;
+    height: 10rem;
 }
 .container:hover {
     transform: scale(0.9);
     z-index: 100;
-    border: 5px solid #2055A1;
+    border: 5px solid #456696;
 }
 .container a {
     text-decoration: none;
@@ -26,9 +45,10 @@
     font-size: 1.2rem;
     margin: 0;
     color: rgb(53, 53, 53);
+    transition: 0.3s all;
 }
 .container:hover .title {
-    color: #2055A1;
+    font-size: 2rem;
 }
 
 @media (max-width: 768px){

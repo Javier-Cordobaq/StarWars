@@ -8,7 +8,9 @@
     box-sizing: border-box;
     border-bottom: 1px solid white;
 }
-
+.container p {
+    font-weight: bold;
+}
 .container a {
     display: grid;
     place-items: center;

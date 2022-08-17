@@ -19,17 +19,18 @@ const DetailFilm = () => {
     useEffect(() => {
             dispatch(getFilmsById(_id)).then((res) => {
                 setLoad(true)
-               /*  callCharacters(res.payload.characters) */
+                callCharacters(res.payload.characters)
             })
         return (() => {dispatch(reset())})
     }, [dispatch])
 
-/*     const callCharacters = (array) => {
-        for(let i = 0; i < array?.length; i++){
+    const callCharacters = (array) => {
+        array.forEach(c => dispatch(getCharacters(c)))
+       /*  const length = array.length
+        for(let i = 0; i < length; i++){
                 dispatch(getCharacters(array[i]))    
-        }
-    } */
-
+        } */
+    }
 
   return (
     <div className={style.container}>
@@ -45,11 +46,11 @@ const DetailFilm = () => {
                     <p>Opening: {detail.opening_crawl} </p> 
                     <p>Productor: {detail.producer}</p> 
                     <div className={style.containerCards}>
-                       {/*  {
+                        {
                             InfoCharacters.length !== 0 ? InfoCharacters?.map(c => (
                                 <CardCharacter props={c} key={c.name} />
-                            )) : null
-                        } */}
+                            )) : <h1>Cargando...</h1>
+                        } 
                     </div>
                 </div>
 
