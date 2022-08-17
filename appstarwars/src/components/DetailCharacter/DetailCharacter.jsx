@@ -40,14 +40,14 @@ const DetailCharacter = () => {
                     <p>Genero: {detail.gender}</p>
                     <p>Masa: {detail.mass}</p>
                     <p>Altura: {detail.height}</p>
-                        <div className={style.containerCards}>
+                        <div className={style.contenedorr}>
                             {
                                 naves.length !== 0 ? naves?.map(c => (
-                                    <div key={c.name}>
-                                        <h1>{c.name}</h1>
-                                        <p>{c.model}</p>
-                                        <p>{c.starship_class}</p>
-                                        <p>{c.passengers}</p>
+                                    <div className={style.containerCards} key={c.name}>
+                                        <h1 className={style.title}>Nombre: {c.name}</h1>
+                                        <p>Modelo: {c.model}</p>
+                                        <p>Clase: {c.starship_class}</p>
+                                        <p>Pasajeros: {c.passengers}</p>
                                     </div>
                                 )) : <h1 className={style.error}>Este personaje no tiene vehiculos</h1>
                             } 

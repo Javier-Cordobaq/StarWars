@@ -1,6 +1,7 @@
 import React from 'react'
 import style from '../Card/Card.module.css'
 import { Link } from 'react-router-dom'
+import Sable from '../../assets/Sable.webp'
 
 const Card = ({info}) => {
 
@@ -17,6 +18,7 @@ const Card = ({info}) => {
                 <p>Fecha lanzamiento: {info.release_date}</p>
                 <p>Director: {info.director}</p>
                 <p>Productor: {info.producer}</p>
+                <img src={Sable} alt=''/>
             </div>
         </div>
         </Link>

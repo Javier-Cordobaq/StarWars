@@ -1,4 +1,5 @@
 .container {
+    position: relative;
     width: 25rem;
     height: 15rem;
     border: 3px solid white;
@@ -14,6 +15,16 @@
     box-shadow:  20px 20px 60px #b2b2b2,
                 -20px -20px 60px #f0f0f0;
 }
+.container img {
+    position: absolute;
+    bottom: 2rem;
+    right: -5rem;
+    height: 8rem;
+    object-fit: cover;
+    transform: rotate(90deg);
+    z-index: 1;
+    opacity: 50%;
+}
 /* Estios contenedor titulo */
 .containerTitle {
     transition: 0.3s all;
@@ -22,6 +33,7 @@
     box-sizing: border-box;
     padding: 0 1rem;
     display: flex;
+    z-index: 100;
 }
 .container:hover .containerTitle {
     background-color: #456696;
