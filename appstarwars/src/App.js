@@ -9,6 +9,7 @@ function App() {
   return (
     <div className="App">
       <Nav/>
+      <h1>Prueba de cambios reflejados en page</h1>
       <Routes>
         <Route path='/' element={<LandingPage/>} />
         <Route path='/detail/:_id' element={<DetailFilm/>} />
